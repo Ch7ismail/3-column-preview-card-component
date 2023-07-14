@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Lexend+Deca&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Fraunces:opsz,wght@9..144,500&display=swap);
+
+:root{
+    --BrightOrange:hsl(31, 77%, 52%);
+    --DarkCyan:hsl(184, 100%, 22%);
+    --VeryDarkCyan:hsl(179, 100%, 13%);
+    --TransparentWhite:hsla(0, 0%, 100%, 0.75);
+    --VeryLightGray:sl(0, 0%, 95%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    color: var(--TransparentWhite);
+    font-size: clamp(.5rem 1vw, 1rem);
+}
+
+h1{
+    font-family: 'Big Shoulders Display', sans-serif;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+p{
+    font-family: 'Lexend Deca', sans-serif;
+    margin-bottom: 3rem;
+}
+
+.container{
+    display: grid;
+    grid-auto-flow: column;
+    padding: 1rem;
+}
+
+.card{
+    max-width: 20rem;
+    min-height: 30rem;
+    height: auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    max-width: max(50%, 10em);
+    padding: .5em 1.5em;
+    border-radius: 20px;
+    border: none;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 700;
+    margin-top: auto;
+    font-size: clamp(.3rem .5vw, 1.5rem);
+}
+
+.card:first-child >button{
+    color: var(--BrightOrange);
+}
+
+.card:nth-child(2) >button{
+    color: var(--DarkCyan);
+}
+
+.card:nth-child(3) >button{
+    color: var(--VeryDarkCyan);
+}
+
+.card:first-child{
+    background-color: var(--BrightOrange);
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.card:nth-child(2){
+    background-color: var(--DarkCyan);
+}
+
+.card:nth-child(3){
+    background-color: var(--VeryDarkCyan);
+    border-radius: 0 .5rem .5rem 0;
+}
+
+@media (max-width:40em){
+    .container{
+        grid-auto-flow: row;
+    }
+    .card:first-child{
+        border-radius: .5rem .5rem 0 0;
+    }
+    .card:nth-child(3){
+        border-radius: 0 0 .5rem .5rem;
+    }
+}
